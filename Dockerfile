@@ -13,4 +13,7 @@ RUN set -x && \
   apt-get update && \
   apt-get upgrade -y && \
   apt-get install -y --no-install-recommends \
-  "${KEPT_PACKAGES[@]}"
+  "${KEPT_PACKAGES[@]}" && \
+  # Do some stuff for kx1t's convenience:
+  echo "alias dir=\"ls -alsv\"" >> /root/.bashrc && \
+  echo "alias nano=\"nano -l\"" >> /root/.bashrc
