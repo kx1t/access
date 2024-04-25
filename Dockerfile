@@ -8,7 +8,9 @@ RUN set -x && \
   # packages needed to install
   KEPT_PACKAGES+=(git) && \
   KEPT_PACKAGES+=(ssh) && \
+  KEPT_PACKAGES+=(jq) && \
   # install packages
   apt-get update && \
+  apt-get upgrade -y && \
   apt-get install -y --no-install-recommends \
   "${KEPT_PACKAGES[@]}"
